@@ -1,0 +1,13 @@
+<ul class="p-5 list-group list-group-flush">
+    <li class="list-group-item">
+        <span class="text-danger">Vous etes sur pour la suppression de ce message ? </span>
+    </li>
+    <li class="list-group-item">
+        <span class="text-info">{{message.object}}</span>
+    </li>
+</ul>
+<div class="text-center">
+    <a class="btn btn-outline-secondary btn-large" style="margin:20px;"
+    (click)="console.log('annulation');">Cancel</a> <span class="text-primary"></span>
+    <a class="btn btn-info btn-large" (click)="deleteMessage();">Delete</a>
+</div>

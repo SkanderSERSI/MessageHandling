@@ -1,0 +1,26 @@
+<div *ngIf="errorMessage" class="p-5 alert alert-danger" role="alert">{{errorMessage}}</div>
+<form class="p-5" #f="ngForm" (ngSubmit)="submitForm(f)">
+    <div class="form-group ">
+    <label for="Objet :">Title:</label>
+    <input type="text" class="form-control" [class.is-invalid]="object.invalid && object.touched" required #object="ngModel" name="object" [(ngModel)]="message.object">
+    <small class="text-danger" [class.d-none]="object.valid || object.untouched">Object is required</small>
+    </div>
+    <div class="form-group">
+    <label for="priority">Priority:</label>
+    <select for="priority" class="browser-default custom-select mb-3" [class.is-invalid]="priority.invalid && priority.touched" required #priority="ngModel" name="priority" [(ngModel)]="message.priority">
+    <option selected value="LOW">LOW</option>
+    <option value="MEDIUM">MEDIUM</option>
+    <option value="HIGH">HIGH</option>
+    </select>
+    <small class="text-danger" [class.d-none]="priority.valid || priority.untouched">Priority is required</small>
+    </div> 
+    <div class="form-group">
+    <label for="content">Message:</label>
+    <textarea class="form-control" rows="5" id="content" [class.is-invalid]="content.invalid && content.touched" required #content="ngModel" name="content" [(ngModel)]="message.content"></textarea>
+    <small class="text-danger" [class.d-none]="content.valid || content.untouched">Message is required</small>
+    </div>
+    <div class="text-right">
+    <button class="btn btn-primary" [disabled]="f.pristine || f.invalid" type="submit">Send</button> 
+    </div> 
+    </form>
+    

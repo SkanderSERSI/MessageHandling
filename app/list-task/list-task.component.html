@@ -1,0 +1,18 @@
+<table>
+        <tr>
+        <th>Id</th>
+        <th>Objet :</th>
+        <th>Message</th>
+        <th>Publié le:</th>
+        <th> Priorite </th>
+        <th>Action</th>
+        </tr>
+        <tr *ngFor="let message of messages">
+        <td>{{message.id}}</td>
+        <td>{{message.object}}</td>
+        <td>{{message.content}}</td>
+        <td>{{message.publication_date}}</td>
+        <td>{{message.priority}}</td>
+        <td><button (click)="deleteMessage(message.id)">Delete</button></td>
+        </tr>
+</table>
